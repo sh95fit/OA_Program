@@ -18,15 +18,15 @@ connection = mysql.connector.connect(
     database=DB_DATABASE,
 )
 
-cnt = 0
-rtu_id = 608
-query = f"SELECT * FROM gsmon_solar_data where rtu_id = {rtu_id}"
+rtu_id = 933
+query = f"SELECT multi, cpg, save_time_id, save_time FROM gsmon_solar_data where rtu_id = {rtu_id}"
 
 output_file = "C:/Users/user/Desktop/KIMSEHUN/develop/OA_Program/solar_data.csv"
 
 
 def fetch_and_append_to_csv(connection, query, output_file, chunk_size=10000):
     offset = 0
+    cnt = 0
 
     while True:
         df = pd.read_sql(
