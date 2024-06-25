@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # 디렉토리 경로
-directory = r'C:\Users\user\Desktop\1차프로젝트\모니터링관련프로젝트\통합모니터링개발관련\기존KT클라우드서버\서버호스팅비용관리'
+directory = r'C:\Users\user\Desktop\프로젝트\모니터링관련프로젝트\통합모니터링개발관련\기존KT클라우드서버\서버호스팅비용관리'
 
 # 디렉토리 내 파일 목록 가져오기
 file_list = [filename for filename in os.listdir(
@@ -14,8 +14,8 @@ merged_df = pd.DataFrame()
 # 파일들을 읽어서 DataFrame에 추가
 for filename in file_list:
     # 파일 이름에서 YY와 MM 추출
-    year = filename.split('_')[0][-2:]
-    month = filename.split('_')[1][:2]
+    year = filename.split('_')[0][-3:-1]
+    month = filename.split('_')[0][:2]
 
     # 엑셀 파일 읽기
     file_path = os.path.join(directory, filename)
