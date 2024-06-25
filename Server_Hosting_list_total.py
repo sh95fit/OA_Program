@@ -23,8 +23,8 @@ for filename in file_list:
 
     # 유효한 값이 있는 행 확인 후 YY와 MM 입력
     valid_rows = df.dropna(subset=[df.columns[0]])  # 첫 번째 열에 값이 있는 행 선택
-    valid_rows['F'] = month  # 월 값은 F열에 입력
-    valid_rows['G'] = year   # 연도 값은 G열에 입력
+    valid_rows['년'] = month  # 월 값은 F열에 입력
+    valid_rows['월'] = year   # 연도 값은 G열에 입력
 
     # 데이터 프레임에 추가
     merged_df = pd.concat([merged_df, valid_rows])
